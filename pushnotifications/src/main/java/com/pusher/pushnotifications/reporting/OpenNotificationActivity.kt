@@ -35,6 +35,7 @@ class OpenNotificationActivity: Activity() {
         i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
         try {
             applicationContext.startActivity(i)
+            log.i("Calling finish on activity")
             finish()
         } catch (_: RuntimeException) {
             log.e("Failed to start activity using clickAction $clickAction")
